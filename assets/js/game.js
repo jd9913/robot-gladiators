@@ -112,11 +112,15 @@ var fight = function (enemyName) {
 
 };
 
-
 for (var i = 0; i < enemyName.length; i++) {
-    debugger;
+    if (playerHealth > 0) {
+        window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
+    }
+
+        
     var pickedEnemyName = enemyName[i];
     enemyHealth = 50;
+    debugger;
     //call fight function with enemy robot
     fight(pickedEnemyName);
 }
