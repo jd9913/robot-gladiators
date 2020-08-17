@@ -35,7 +35,7 @@ var fight = function (enemyName) {
             if (confirmSkip) {
                 window.alert(playerName + " has decided to skip this fight.  Goodbye!");
                 //subtract money from playerMoney for skipping
-                playerMoney = playerMoney - 2;
+                playerMoney = Math.max(0,playerMoney - 2);
                 console.log("playerMoney", playerMoney);
                 break;
             }
@@ -44,7 +44,7 @@ var fight = function (enemyName) {
 
         //subtract the value of 'playerAttack' from the value of 'enemyHealth' and use that result to update the value in the 'enemyHealth' variable.
 
-        enemyHealth = enemyHealth - playerAttack;
+        enemyHealth = Math.max(0,enemyHealth - playerAttack);
 
 
         //log a resulting message to the console so we know it worked.
@@ -73,7 +73,7 @@ var fight = function (enemyName) {
 
         //subtract the value of 'enemyAttack' from the value of 'playerHealth' and use that result to update the value in the 'playerHealth' variable.
 
-        playerHealth = playerHealth - enemyAttack;
+        playerHealth = Math.max(0,playerHealth - enemyAttack);
 
         //Log a resulting message to the console so we know that it worked.
 
